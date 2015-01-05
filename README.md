@@ -5,7 +5,7 @@
 请使用现代浏览器打开 `index.html` 即可。
 > ### 注意
 >
-> 建议使用最新版 [Google Chrome](http://rj.baidu.com/soft/detail/14744.html) 或 Webkie 内核的浏览器，使用旧版或其他浏览器可能会出现意外结果。
+> 建议使用最新版 [Google Chrome](http://rj.baidu.com/soft/detail/14744.html) 或 Webkit 内核的浏览器，使用旧版或其他浏览器可能会出现意外结果。
 >
 > 已知的兼容性问题
 > * IE 11 下无音效、消除方块时无连线动画
