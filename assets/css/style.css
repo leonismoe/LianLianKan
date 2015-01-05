@@ -1,6 +1,6 @@
 /* 全局样式 */
 html, body, h1, h2, h3, h4, h5, h6, p, span, div, input, textarea, em, strong, i, button, table, tr, td, th, ul, ol, li {
-	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei Light", "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
 }
 body{
 	background-color: #006fb5;

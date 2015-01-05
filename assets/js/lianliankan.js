@@ -548,7 +548,7 @@ var LLK = (function() {
 		if(canEliminate.tripleline(a, b, ca, cb)) return true;
 		return false;
 	}
-	canEliminate.singleline = function(a, b, ca, cb) {
+	canEliminate.singleline = function(a, b, ca, cb) { // 判断是否可直线连接
 		if(a.constructor === Object) {
 			ca = $.extend({}, a);
 			cb = $.extend({}, b);
@@ -574,7 +574,7 @@ var LLK = (function() {
 		path.push(b);
 		return true;
 	};
-	canEliminate.doubleline = function(a, b, ca, cb) {
+	canEliminate.doubleline = function(a, b, ca, cb) { // 判断是否可用两条线段连接（拐一个角）
 		var	cc = $.extend({}, ca), cd = $.extend({}, ca);
 		cc.x = cb.x;
 		cd.y = cb.y;
@@ -587,7 +587,7 @@ var LLK = (function() {
 		}
 		return false;
 	};
-	canEliminate.tripleline = function(a, b, ca, cb, y) {
+	canEliminate.tripleline = function(a, b, ca, cb, y) { // 判断是否可用三条线段连接（拐两个角）
 		var ha = {}, hb = {}, ha_tmp = [], hb_tmp = [], mid, i, t, s;
 
 		if(!y && ca.y !== cb.y) {
@@ -666,7 +666,9 @@ var LLK = (function() {
 						path.push({x:-1, y:cb.y});
 						if((!blockcache[s] || b==s) && canEliminate.singleline(s, b, {x:0}, cb)) return true;
 					}
-				} else if($.inArray(rows-1, intersection) > -1 || ca.x===columns-1 || cb.x===columns-1) {
+				}
+				path = _path.slice();
+				if($.inArray(columns-1, intersection) > -1 || ca.x===columns-1 || cb.x===columns-1) {
 					t = coordinate2index({x:columns-1, y:ca.y});
 					s = coordinate2index({x:columns-1, y:cb.y});
 					if((!blockcache[t] || a==t) && canEliminate.singleline(a, t, ca, {x:columns-1})) {
@@ -684,7 +686,9 @@ var LLK = (function() {
 						path.push({x:cb.x, y:-1});
 						if((!blockcache[s] || b==s) && canEliminate.singleline(s, b, {x:cb.x}, cb)) return true;
 					}
-				} else if($.inArray(columns-1, intersection) > -1 || ca.y===rows-1 || cb.y===rows-1) {
+				}
+				path = _path.slice();
+				if($.inArray(rows-1, intersection) > -1 || ca.y===rows-1 || cb.y===rows-1) {
 					t = coordinate2index({x:ca.x, y:rows-1});
 					s = coordinate2index({x:cb.x, y:rows-1});
 					if((!blockcache[t] || a==t) && canEliminate.singleline(a, t, ca, {x:ca.x})) {
