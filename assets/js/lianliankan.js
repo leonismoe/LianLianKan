@@ -614,20 +614,26 @@ var LLK = (function() {
 			s = ca.x;
 			t = (rows - 1) * columns + s;
 			for(i=s; i<=t; i+=columns) {
-				++row;
-				if(blockcache[i]) continue;
+				if(blockcache[i]) {
+					++row;
+					continue;
+				}
 				ha[row] = i;
 				ha_tmp.push(row);
+				++row;
 			}
 
 			row = 0;
 			s = cb.x;
 			t = (rows - 1) * columns + s;
 			for(i=s; i<=t; i+=columns) {
-				++row;
-				if(blockcache[i]) continue;
+				if(blockcache[i]) {
+					++row;
+					continue;
+				}
 				hb[row] = i;
 				hb_tmp.push(row);
+				++row;
 			}
 		}
 
